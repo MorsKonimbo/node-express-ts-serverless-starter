@@ -1,16 +1,14 @@
 {
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts", ".webpack/**/*", ".vscode/**/*", "*.config.cjs"],
   "compilerOptions": {
-    "target": "es6",
+    "lib": ["ES2022"],
     "module": "commonJS",
-    "outDir": "dist",
+    "target": "ES2022",
     "sourceMap": false,
-    "lib": ["es6", "dom"],
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "moduleResolution": "node"
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts", ".webpack/**/*", ".vscode/**/*", "*.config.cjs"]
+    "moduleResolution": "node",
+    "outDir": "dist"
+  }
 }
