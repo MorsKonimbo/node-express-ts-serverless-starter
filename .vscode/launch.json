@@ -4,11 +4,12 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug Serverless windows",
+      "name": "Debug Serverless linux",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "debug"],
-      "outFiles": ["${workspaceFolder}"],
+      // "console": "externalTerminal",
+      // "outFiles": ["${workspaceFolder}"],
       "port": 9229,
       "sourceMaps": true
     }
