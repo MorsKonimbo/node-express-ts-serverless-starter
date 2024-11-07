@@ -1,17 +1,40 @@
 {
   "version": "0.2.0",
-  "configurations": [
-    {
+  "configurations": [ 
+      {
       "type": "node",
       "request": "launch",
-      "name": "Debug Serverless linux",
+      "name": "Debug Serverless windows",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "debug"],
       // "console": "externalTerminal",
       // "outFiles": ["${workspaceFolder}"],
-      "port": 9229,
+      // "port": 9229,
       "sourceMaps": true
-    }
-  ]
+  },
+  {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Serverless linux",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "debug-linux"],
+      // "console": "externalTerminal",
+      // "outFiles": ["${workspaceFolder}"],
+      // "port": 9229,
+      "sourceMaps": true
+  },
+  {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Serverless mac",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "debug-mac"],
+      // "console": "externalTerminal",
+      // "outFiles": ["${workspaceFolder}"],
+      // "port": 9300,
+      "sourceMaps": true
+  }]
 }

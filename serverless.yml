@@ -1,13 +1,36 @@
+# ! Change the service name to your own
 service: express-js-ts-service-template
 plugins:
   - serverless-plugin-typescript-express
   - serverless-offline
 
+custom:
+  serverless-offline:
+    noTimeout: true  # Disable the timeout enforcement in Serverless Offline
+
 provider:
   name: aws
-  runtime: nodejs16.x
-  timeout: 29
+  runtime: nodejs18.x
   region: eu-west-1
+  stage: dev # dev or prod
+  timeout: 29
+  profile: profile-name # !Change AWS CLI profile name
+  architecture: arm64 # https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html
+  endpointType: REGIONAL # https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-endpoint-types.html
+  apiGateway:
+    shouldStartNameWithService: true
+  vpc:
+    securityGroupIds:
+      - sg-0599b6c1e2554ccd1
+    subnetIds:
+      - subnet-058afce5ca8484e9d
+      - subnet-04f14a2e7d6b3585c
+      - subnet-088022f230bd683b1
+  iam:
+    # ! Change the role name to your role name
+    # For Konimbo Junior Devs change the role name to KonimboJuniorLambdaRole
+    # For Konimbo Developers change the role name to your role name
+    role: arn:aws:iam::${aws:accountId}:role/{role-name} 
 
 functions:
   app:
